@@ -16,7 +16,13 @@ public class Lion {
         }
     }
 
-    Feline feline = new Feline();
+    //Feline feline = new Feline();
+    //Инъекция зависимостей
+    private Feline feline;
+
+    public Lion(Feline feline) {
+        this.feline = feline;
+    }
 
     public int getKittens() {
         return feline.getKittens();
