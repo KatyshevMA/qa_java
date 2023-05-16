@@ -4,6 +4,7 @@ import java.util.List;
 
 public class Lion {
 
+    private Feline feline;  //Инъекция зависимостей
     boolean hasMane;
 
     public Lion(String sex) throws Exception {
@@ -18,7 +19,6 @@ public class Lion {
 
     //Feline feline = new Feline();
     //Инъекция зависимостей
-    private Feline feline;
 
     public Lion(Feline feline) {
         this.feline = feline;
