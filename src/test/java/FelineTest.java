@@ -35,18 +35,9 @@ public class FelineTest {
         Assert.assertEquals("Кошачьи", feline.getFamily());
     }
 
-    @Mock
-    Feline fel;
-
     @Test
-    public void testEatMeatPredator() throws Exception {
-        Mockito.when(fel.eatMeat()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
-        Assert.assertEquals(List.of("Животные", "Птицы", "Рыба"), fel.eatMeat());
-    }
-
-    @Test
-    public void testGetFoodUsed() throws Exception {
-        fel.getFood("Хищник");
-        Mockito.verify(fel).getFood("Хищник");
+    public void predatorCallsGetFood() throws Exception {
+        feline.eatMeat();
+        Mockito.verify(feline, Mockito.times(1)).getFood("Хищник");
     }
 }
