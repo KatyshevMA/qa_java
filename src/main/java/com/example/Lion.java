@@ -4,9 +4,11 @@ import java.util.List;
 
 public class Lion {
 
+    private Feline feline;  //Инъекция зависимостей
     boolean hasMane;
 
-    public Lion(String sex) throws Exception {
+    public Lion(String sex, Feline feline) throws Exception {
+        this.feline = feline;
         if ("Самец".equals(sex)) {
             hasMane = true;
         } else if ("Самка".equals(sex)) {
@@ -16,7 +18,8 @@ public class Lion {
         }
     }
 
-    Feline feline = new Feline();
+    //Feline feline = new Feline();
+    //Инъекция зависимостей
 
     public int getKittens() {
         return feline.getKittens();
